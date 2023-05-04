@@ -1,0 +1,6 @@
+name: docker-demo
+
+forward:
+  - 5500:5500
+reverse:
+  - 5500:5500
