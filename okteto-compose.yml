@@ -1,6 +1,19 @@
-name: docker-demo
+version: "3.10"
+services:
+  docker-demo:
+    image: docker-demo:latest
+    working_dir: /app
+    build: "./"
+    restart: always
+    command: bash -c "python app.py"
+    ports:
+      - "5500:5500"
+    public: true
+    networks:
+      - all
 
-forward:
-  - 5500:5500
-reverse:
-  - 5500:5500
+networks:
+  all:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"
