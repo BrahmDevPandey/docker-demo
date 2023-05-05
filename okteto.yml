@@ -5,7 +5,7 @@ services:
     working_dir: /app
     build: "./"
     restart: always
-    command: "python -m flask run --port=5500"
+    command: "python app.py"
     ports:
       - "5500:5500"
     public: true
